@@ -7,6 +7,7 @@ export const Berthold = ({children}: {children: React.ReactNode}) => (
             .berthold{
                 font-family: 'Berthold Akzidenz';
                 font-size: 2.7rem;
+                text-align: center;
             }
         `}</style>
         <h1 className="berthold">{children}</h1>
