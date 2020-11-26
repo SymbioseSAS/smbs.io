@@ -1,56 +1,45 @@
 import {
-  Link as ChakraLink,
-  Text,
-  Code,
-  List,
-  ListIcon,
-  ListItem,
-} from '@chakra-ui/react'
-import { CheckCircleIcon, LinkIcon } from '@chakra-ui/icons'
+    Link as ChakraLink,
+    Text,
+    Button,
+    VStack,
+} from '@chakra-ui/react';
 
-import { Hero } from '../components/Hero'
+import Logo from "../../public/SYMBIOSE_2020_LOGO.svg";
+
 import { Container } from '../components/Container'
-import { Main } from '../components/Main'
 import { DarkModeSwitch } from '../components/DarkModeSwitch'
-import { CTA } from '../components/CTA'
 import { Footer } from '../components/Footer'
+import { Stack } from '@chakra-ui/react'
+import React from 'react';
+import { Berthold } from '../components/Berthold';
 
 const Index = () => (
-  <Container height="100vh">
-    <Hero />
-    <Main>
-      <Text>
-        Example repository of <Code>Next.js</Code> + <Code>chakra-ui</Code> +{' '}
-        <Code>typescript</Code>.
-      </Text>
+    <Container height="100vh">
+        <Stack>
+            <Logo/>
+            <Berthold>symbiose ©</Berthold>
+            <Text align="center">We're still under construction 🔨</Text>
+        </Stack>
 
-      <List spacing={3} my={0}>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink
-            isExternal
-            href="https://chakra-ui.com"
-            flexGrow={1}
-            mr={2}
-          >
-            Chakra UI <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-        <ListItem>
-          <ListIcon as={CheckCircleIcon} color="green.500" />
-          <ChakraLink isExternal href="https://nextjs.org" flexGrow={1} mr={2}>
-            Next.js <LinkIcon />
-          </ChakraLink>
-        </ListItem>
-      </List>
-    </Main>
+        <DarkModeSwitch />
+        <Footer>
+            <VStack>
+                <ChakraLink
+                    isExternal
+                    href="mailto:hello@smbs.io"
+                    flexGrow={3}
+                    mt={2}
+                >
+                    <Button width="100%" variant="solid" colorScheme="smbs">
+                        Send us a mail
+                    </Button>
+                </ChakraLink>
+            </VStack>
+        </Footer>
+    </Container>
+);
 
-    <DarkModeSwitch />
-    <Footer>
-      <Text>Next ❤️ Chakra</Text>
-    </Footer>
-    <CTA />
-  </Container>
-)
 
 export default Index
+  
